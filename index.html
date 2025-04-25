@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROSPER OJO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <script>
+        if (
+            localStorage.theme === 'dark' ||
+            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+
+    <style>
+        .hamburger span {
+            transition: all 0.3s ease-in-out;
+            margin-right: 10px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <nav class="w-full fixed top-0 left-0 z-50 bg-white dark:bg-gray-900 shadow-md sticky top-0">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="text-2xl font-bold">PROSPER OJO</div>
+            <button id="theme-toggle" class="text-xl md:mr-4 space-x-8 focus:outline-none">
+                🌙
+            </button>
+            <!-- mobile hamburger icon -->
+            <div class="md:hidden flex items-center">
+                <button id="hamburger" class="hamburger flex flex-col space-y-1">
+                    <span class="w-6 h-0.5 bg-gray-800 dark:bg-white"></span>
+                    <span class="w-6 h-0.5 bg-gray-800 dark:bg-white"></span>
+                    <span class="w-6 h-0.5 bg-gray-800 dark:bg-white"></span>
+                </button>
+            </div>
+
+            <ul id="nav-links" class="hidden md:flex space-x-8 font-medium">
+                <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+                <li><a href="#about" class="hover:text-blue-500">About</a></li>
+                <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+                <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- mobile nav (Dropdown) -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+            <ul class="flex flex-col space-y-4 font-medium">
+                <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+                <li><a href="#about" class="hover:text-blue-500">About</a></li>
+                <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+                <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="home"
+        class="min-h-[calc(100vh-4rem)] flex flex-col-reverse mb-5 md:flex-row items-center justify-center px-6 md:px-16 pt-20 md:pt-24 gap-10">
+        <div class="md:w-1/2 text-center md:text-left space-y-6">
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+                Hello, I'm <span class="text-blue-500">Prosper</span><br>
+                A Frontend Developer 🚀
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300">
+                I craft efficient, responsive, and visually appealing web experiences to meet user needs and business
+                goals.
+            </p>
+            <div class="flex justify-center md:justify-start gap-4">
+                <a href="#projects"
+                    class="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition">View Projects</a>
+                <a href="#contact"
+                    class="border border-blue-500 text-blue-500 px-6 py-3 rounded-full hover:bg-blue-50 dark:hover:bg-gray-800 transition">Contact
+                    Me</a>
+            </div>
+        </div>
+        <div class="md:w-1/2" data-aos="fade-left">
+            <img src="images/Developer activity (1).gif" alt="Developer" class="w-full max-w-md mx-auto rounded-full">
+        </div>
+    </section>
+    <!-- ABOUT SECTION -->
+    <!-- ABOUT SECTION -->
+    <section id="about" class="pt-5 pb-8 px-6 md:px-16 bg-gray-100 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto text-center space-y-10" data-aos="fade-up">
+            <!-- Heading -->
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">About Me</h2>
+                <div class="w-16 h-1 bg-blue-500 mx-auto mt-2 rounded"></div>
+            </div>
+
+            <!-- Description -->
+            <div class="space-y-4 text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                <p>
+                    I'm <span class="font-semibold text-blue-500">Prosper</span>, a frontend developer passionate about
+                    crafting beautiful and functional user experiences. I specialize in building sleek, responsive, and
+                    interactive websites using modern tools like Tailwind CSS, JavaScript, and React.
+                </p>
+                <p>
+                    With a strong eye for design and user interaction, I love transforming ideas into digital reality.
+                    Whether it's a personal project or a professional solution, I aim to create work that’s both
+                    pixel-perfect and user-centered.
+                </p>
+            </div>
+
+            <!-- Skills -->
+            <div class="flex flex-wrap justify-center gap-3 pt-4">
+                <span
+                    class="px-4 py-1 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-full text-sm">React
+                    JS</span>
+                <span
+                    class="px-4 py-1 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-full text-sm">Vite</span>
+                <span
+                    class="px-4 py-1 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-full text-sm">JavaScript</span>
+                <span
+                    class="px-4 py-1 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-full text-sm">HTML</span>
+                <span
+                    class="px-4 py-1 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-full text-sm">Tailwind
+                    CSS</span>
+                <span
+                    class="px-4 py-1 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-full text-sm">Git</span>
+                <span
+                    class="px-4 py-1 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-full text-sm">Figma</span>
+                <span
+                    class="px-4 py-1 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-full text-sm">Wordpress</span>
+                <span
+                    class="px-4 py-1 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-full text-sm">Framer</span>
+                <span
+                    class="px-4 py-1 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-full text-sm">Bootstrap</span>
+            </div>
+        </div>
+    </section>
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="pt-5 pb-5 px-6 md:px-16 bg-white dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto text-center space-y-10" data-aos="fade-up">
+
+            <!-- Section Heading -->
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">Projects</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto mt-2 rounded-full"></div>
+                <p class="mt-4 text-gray-600 dark:text-gray-400 text-lg">Some of the cool stuff I've built recently.</p>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project Card -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden flex flex-col"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/STRATIFY.png" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Stratify SAAS</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">A fully responsive digital marketing
+                                agency Software as a Service made with Bootstrap and JavaScript.</p>
+                        </div>
+                        <div class="flex gap-3 mt-4">
+                            <a href="https://stratify-dm.netlify.app/" target="_blank"
+                                class="text-sm px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">Live</a>
+                            <a href="https://github.com/prosperojo/effective-palm-tree.git" target="_blank"
+                                class="text-sm px-4 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-50 dark:hover:bg-gray-700 transition">Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden flex flex-col"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/Screenshot 2025-04-25 122320.png" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">InKind</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">A software platform
+                                that helps people make donations easily.
+                                The app features a modal-based confirmation system, animated success
+                                feedback, payment system with paystack.</p>
+                        </div>
+                        <div class="flex gap-3 mt-4">
+                            <a href="https://prosperojo.github.io/InKind/" target="_blank"
+                                class="text-sm px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">Live</a>
+                            <a href="https://github.com/prosperojo/InKind.git" target="_blank"
+                                class="text-sm px-4 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-50 dark:hover:bg-gray-700 transition">Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden flex flex-col"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/Screenshot 2025-03-01 005116.png" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Quiz App</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">A fast, fun, interactive quiz app with
+                                API integrated questions, score
+                                tracking, animations, and local storage — built with HTML, CSS & JS.</p>
+                        </div>
+                        <div class="flex gap-3 mt-4">
+                            <a href="https://quizapp-int.netlify.app/" target="_blank"
+                                class="text-sm px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">Live</a>
+                            <a href="https://github.com/prosperojo/studious-umbrella.git" target="_blank"
+                                class="text-sm px-4 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-50 dark:hover:bg-gray-700 transition">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden flex flex-col"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/Screenshot 2025-04-15 180346.png" alt="Project 4" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">DevBlog</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">A modern blog interface powered by
+                                React, Dev.to API integration, local storage posts, and authentication.</p>
+                        </div>
+                        <div class="flex gap-3 mt-4">
+                            <a href="https://prosperojo.github.io/sturdy-giggle/" target="_blank"
+                                class="text-sm px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">Live</a>
+                            <a href="https://github.com/prosperojo/sturdy-giggle.git" target="_blank"
+                                class="text-sm px-4 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-50 dark:hover:bg-gray-700 transition">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden flex flex-col"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/Screenshot 2025-02-17 053114.png" alt="Project 5" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">FinPay</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">A simple fintech landing page design
+                                recreated from dribbble with CSS.</p>
+                        </div>
+                        <div class="flex gap-3 mt-4">
+                            <a href="https://finpay-io.netlify.app/" target="_blank"
+                                class="text-sm px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">Live</a>
+                            <a href="https://github.com/prosperojo/laughing-eureka.git" target="_blank"
+                                class="text-sm px-4 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-50 dark:hover:bg-gray-700 transition">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden flex flex-col"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/Screenshot 2025-01-09 081500.png" alt="Project 6" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Responsive Dashboard
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">A modern, responsive admin dashboard
+                                featuring a clean and intuitive UI, interactive table, and theme change.</p>
+                        </div>
+                        <div class="flex gap-3 mt-4">
+                            <a href="https://prosperojo.github.io/turbo-computing-machine/" target="_blank"
+                                class="text-sm px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">Live</a>
+                            <a href="https://github.com/prosperojo/turbo-computing-machine.git" target="_blank"
+                                class="text-sm px-4 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-50 dark:hover:bg-gray-700 transition">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden flex flex-col"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/Screenshot 2025-04-15 184839.png" alt="Project 7" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Animated Portfolio</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">A personal, responsive, and animated
+                                portfolio
+                                website built using Tailwind CSS,
+                                and JavaScript to showcase my frontend skills and few projects.</p>
+                        </div>
+                        <div class="flex gap-3 mt-4">
+                            <a href="#" target="_blank"
+                                class="text-sm px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">Live</a>
+                            <a href="https://github.com/prosperojo/symmetrical-fishstick.git" target="_blank"
+                                class="text-sm px-4 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-50 dark:hover:bg-gray-700 transition">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="pt-5 pb-8 px-6 md:px-16 bg-gray-100 dark:bg-gray-900">
+        <div class="max-w-3xl mx-auto text-center space-y-10">
+
+            <!-- Section Heading -->
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">Contact Me</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto mt-2 rounded-full"></div>
+                <p class="mt-4 text-gray-600 dark:text-gray-400 text-lg">Have a project or just want to say hello? Let’s
+                    talk.</p>
+            </div>
+            <!-- Contact Form -->
+            <form onsubmit="sendEmail(event)" id="contact-form" method="POST"
+                class="bg-white dark:bg-gray-800 shadow-md rounded-xl p-8 space-y-6 text-left">
+                <div>
+                    <label for="name" class="block mb-1 text-sm text-gray-700 dark:text-gray-300">Name</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="email" class="block mb-1 text-sm text-gray-700 dark:text-gray-300">Email</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="message" class="block mb-1 text-sm text-gray-700 dark:text-gray-300">Message</label>
+                    <textarea id="message" name="message" rows="5" required
+                        class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition duration-300">Send
+                    Message</button>
+            </form>
+
+            <!-- Optional Socials Row -->
+            <div class="pt-8 flex justify-center gap-6 text-gray-600 dark:text-gray-400 text-xl">
+                <a href="https://github.com/prosperojo" class="hover:text-blue-500 transition"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/prosper-ojo-b66012294" class="hover:text-blue-500 transition"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="mailto:prosperojo2@gmail.com" class="hover:text-blue-500 transition"><i
+                        class="fas fa-envelope"></i></a>
+                <a href="tel:+2348131694341" target="_blank" class="hover:text-blue-500 transition"><i
+                        class="fas fa-phone"></i></a>
+                <a href="https://wa.link/4atoph" target="_blank" class="hover:text-blue-500 transition"><i
+                        class="fab fa-whatsapp"></i></a>
+                <a href="https://x.com/___prosp3r" class="hover:text-blue-500 transition"><i
+                        class="fab fa-x-twitter"></i></a>
+            </div>
+
+        </div>
+    </section>
+    <footer class="dark:bg-gray-800 py-10 px-6 md:px-16 text-center text-white dark:text-gray-400 bg-gray-800">
+        <div class="max-w-4xl mx-auto space-y-4">
+
+            <!-- Name / Logo -->
+            <h3 class="text-xl font-semibold text-white dark:text-white">PROSPER OJO</h3>
+
+            <!-- Social Icons -->
+            <div class="flex justify-center space-x-6 text-xl">
+                <a href="https://github.com/prosperojo" class="hover:text-blue-500 transition"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/prosper-ojo-b66012294" class="hover:text-blue-500 transition"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="mailto:prosperojo2@gmail.com" class="hover:text-blue-500 transition"><i
+                        class="fas fa-envelope"></i></a>
+                <a href="tel:+2348131694341" target="_blank" class="hover:text-blue-500 transition"><i
+                        class="fas fa-phone"></i></a>
+                <a href="https://wa.link/4atoph" target="_blank" class="hover:text-blue-500 transition"><i
+                        class="fab fa-whatsapp"></i></a>
+                <a href="https://x.com/___prosp3r" class="hover:text-blue-500 transition"><i
+                        class="fab fa-x-twitter"></i></a>
+            </div>
+            <p class="text-sm">© <span id="year"></span> Prosper. All rights reserved.</p>
+
+        </div>
+        <button onclick="scrollToTop()"
+            class="fixed bottom-5 right-5 bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition">
+        </button>
+        <script>
+            function scrollToTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        </script>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+        });
+    </script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
